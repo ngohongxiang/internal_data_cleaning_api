@@ -1,4 +1,4 @@
-from data_cleaning_api import clean_df
+from cleaner_api.data_cleaning_api import clean_df
 
 import pandas as pd
 

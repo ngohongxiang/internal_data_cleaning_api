@@ -1,4 +1,4 @@
-from cleaner_api.data_cleaning_api import clean_df
+from cleaner_api.internal_data_cleaning_api import clean_df
 
 import pandas as pd
 
@@ -10,3 +10,4 @@ for col in to_datetime:
 
 df = clean_df(df)
 df.to_csv('output_dataset.csv', index=False)
+print('Successfully cleaned and exported dataset as CSV file.')

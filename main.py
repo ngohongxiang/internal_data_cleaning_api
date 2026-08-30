@@ -2,7 +2,7 @@ from cleaner_api.data_cleaning_api import clean_df
 
 import pandas as pd
 
-df = pd.read_csv("sample_dataset.csv")
+df = pd.read_csv("data/sample_dataset.csv")
 
 to_datetime = ('order_creation_date', 'event_created_date', 'event_start_date', 'event_end_date')
 for col in to_datetime:

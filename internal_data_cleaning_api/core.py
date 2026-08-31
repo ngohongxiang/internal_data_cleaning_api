@@ -1,12 +1,12 @@
 r"""
 ---Suggestions on the Usage of clean_main() on Anvil Uplink Notebook---
 Use the code sample below (RECOMMENDED) after the code that converts the 4 date columns to a datetime object on Anvii Uplink Notebook:
-df = transform.process_df(df)
+df = clean_df(df)
 
 Note: NO CHANGES to the code needed for subsequent runtime.
 
 Alternatively, you can choose to save the cleaned df to CSV (if you pass the 2nd positional argument as True) with the code below:
-transform.process_df(df, is_csv=True)
+clean_df(df, is_csv=True)
 df = pd.read_csv('eventbrite-dataset-anonymised-final.csv')
 
 Note: If you intend to keep the CSV after the 1st generation (may have some ISSUES on 2nd run), replace your 1st pd.read_csv() with the code on the 2nd line above and disable cells that changes the data type for the 4 dates.

@@ -177,6 +177,8 @@ def clean_df(df):
     check_cols = ('exact_course_name', 'category', 'course_format', 'location', 'course_name', 'order_id', 'anon_purchaser_name', 'order_creation_date', 'event_created_date', 'event_start_date', 'event_end_date', 'gross_revenue', 'ticket_revenue', 'pre_gst_revenue', 'gst', 'discount', 'comments', 'ticket_class_name')
     if not set(check_cols).issubset(df):
         raise KeyError('Expected column(s) does not exist in dataframe.')
+    if not (df[['order_creation_date', 'event_created_date', 'event_start_date', 'event_end_date']].dtypes == 'datetime64[ns]').all():
+        raise TypeError('Expected column(s) must be of datetime type.')
     
     # prevent reference to original df
     df = df.copy()
